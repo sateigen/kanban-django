@@ -2,25 +2,31 @@ from rest_framework import serializers
 from board.models import Board, Status, Task, Ticket
 
 
-class BoardSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Board
-        fields = ('name', 'user')
-
-
 class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Status
         fields = ('progress', 'task')
 
 
+
 class TaskSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Task
-        fields = ('ticket', 'description', 'points')
+        fields = ('description', 'points')
 
 
 class TicketSerializer(serializers.ModelSerializer):
+    task_set = TaskSerializer(many=True)
+
     class Meta:
         model = Ticket
-        fields = ('name', 'description', 'board')
+        fields = ('name', 'description', 'task_set')
+
+
+class BoardSerializer(serializers.ModelSerializer):
+    ticket_set = TicketSerializer(many=True)
+
+    class Meta:
+        model = Board
+        fields = ('name', 'user', 'ticket_set')
