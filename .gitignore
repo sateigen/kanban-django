@@ -1,0 +1,4 @@
+__pycache__
+*.pyc
+kanban/secrets.py
+kanban/kanban/secrets.py
