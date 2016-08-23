@@ -1,4 +1,6 @@
+.direnv/
+.envrc
+secrets.py
 __pycache__
+DS.store
 *.pyc
-kanban/secrets.py
-kanban/kanban/secrets.py
