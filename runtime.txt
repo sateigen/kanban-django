@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Python 3.5.1
+=======
+python-3.5.1
+>>>>>>> 51f9e21c5f71f5272e51fd1d2b77fa2ae1ce22b4
