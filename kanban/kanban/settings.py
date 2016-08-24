@@ -99,6 +99,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/index/'
+
 TIME_ZONE = 'EST'
 
 USE_I18N = True

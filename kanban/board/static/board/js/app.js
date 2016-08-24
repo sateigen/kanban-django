@@ -4,10 +4,7 @@ $.ajax({
   if (response.length > 0) {
     response.forEach(function(result) {
       console.log(result);
-      $('#here_table').append('<table></table>')
-      // make a table for each ticket
-      var table = $('#here_table').children();
-      table.append('<tr><td>a</td><td>b</td></tr>');
+      $('<table>').appendTo('#here_table')
     })
   }
 });
