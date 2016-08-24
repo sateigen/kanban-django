@@ -29,7 +29,7 @@ class TicketViewSet(viewsets.ModelViewSet):
     serializer_class = TicketSerializer
     queryset = Ticket.objects.all()
 
-@login_required
+# @login_required
 def board_detail(request, board_id):
     board = Board.objects.get(pk=board_id)
     context = {

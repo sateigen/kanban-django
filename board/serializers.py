@@ -17,7 +17,7 @@ class TaskSerializer(serializers.ModelSerializer):
 
 
 class TicketSerializer(serializers.ModelSerializer):
-    task_set = TaskSerializer(many=True)
+    task_set = TaskSerializer(many=True, read_only=True)
 
     class Meta:
         model = Ticket
@@ -25,7 +25,7 @@ class TicketSerializer(serializers.ModelSerializer):
 
 
 class BoardSerializer(serializers.ModelSerializer):
-    ticket_set = TicketSerializer(many=True)
+    ticket_set = TicketSerializer(many=True, read_only=True)
 
     class Meta:
         model = Board
