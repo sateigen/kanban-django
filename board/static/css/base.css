@@ -1,0 +1,33 @@
+.here_table {
+  padding-left: 3%;
+  width: 200px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 50px;
+  float: left;
+  background-color: darkslategrey;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+}
+
+.here_table  tr th {
+  color: darkorange;
+  text-align: center;
+}
+
+.here_table tr {
+  color: goldenrod;
+  margin: 20px;
+  height: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h2 {
+  text-align: center;
+}
+
+.here_table:hover {
+  background-color: teal;
+}
