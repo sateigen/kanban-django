@@ -1,0 +1,14 @@
+{% extends 'board/base.html' %}
+{% load static %}
+
+{% block body %}
+<h2>{{ board.name }}</h2>
+<div class="here_table">
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="{% static 'board/js/app.js' %}"></script>
+{% endblock %}

@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Board</title>
-  </head>
-  <body>
-    <p>
-      hello
-    </p>
-  </body>
-</html>
+{% extends 'board/base.html' %}
+
+{% block body %}
+{% for board in boards %}
+  <a href="{% url 'board_detail' board.id %}">{{ board.name }}</a>
+{% endfor %}
+{% endblock %}
