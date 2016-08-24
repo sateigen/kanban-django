@@ -1,5 +1,4 @@
 var foo = $('.here_table').attr('id')
-console.log(foo)
 
 $.ajax({
   url: '/api/board/' + foo
@@ -15,20 +14,3 @@ $.ajax({
     table.appendTo('.here_table');
   })
 });
-
-//
-// <table id="abilities">
-//       <thead>
-//         <tr>
-//           <th>
-//             name
-//           </th>
-//           <th>
-//             description
-//           </th>
-//           <th>
-//             power level
-//           </th>
-//         </tr>
-//       </thead>
-//     </table>
