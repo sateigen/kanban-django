@@ -83,7 +83,11 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect('/all_boards/')
+            new_user = authenticate(username=form['username'].value(), password=form['password1'].value())
+            if new_user is not None:
+                login(request, new_user)
+                return HttpResponseRedirect('/all_boards/')
+            # return HttpResponseRedirect('/all_boards/')
     else:
         form = UserCreationForm()
     context = {'form': form}
