@@ -29,3 +29,7 @@ class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
         fields = ('name', 'user', 'ticket_set')
+
+    def create(self, data):
+        board = Board.objects.create(**data)
+        return board
