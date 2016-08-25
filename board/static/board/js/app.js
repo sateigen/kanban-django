@@ -1,18 +1,16 @@
 var board_id = $('.here_table').attr('id')
 
+
 $.ajax({
-  url: '/api/board/' + board_id
+  url: '/api/board/' + board_id + '/'
 }).done(function(response) {
-  console.log(response.ticket_set)
   response.ticket_set.forEach(function(result) {
-    console.log(result);
     var table = $('<table></table>');
-    var $tableHead = $('<thead><tr><th>').text(result.name)
+    var $tableHead = $('<thead><tr><th>').text(result.name);
     table.append($tableHead);
 
     $tableHead.click(function() {
       var ticketName = $tableHead.text()
-      var ticketId = $tablehead
       $tableHead.empty()
 
       var $form = $('<form>').appendTo($tableHead)
@@ -30,7 +28,7 @@ $.ajax({
 
         $.ajax({
           method: 'PUT',
-          url: '/api/ticket/' + ticketId + '/',
+          url: '/api/ticket/2/',
           data: {
             name: ticketName,
             description: result.description,

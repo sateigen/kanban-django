@@ -3,6 +3,12 @@
 
 {% block body %}
 <h2>{{ board.name }}</h2>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="name" value="Name">
+  <input type="text" name="description" value="Description">
+  <button>Add Ticket</button>
+</form>
 <div class="here_table" id="{{ board.id }}">
 
 </div>

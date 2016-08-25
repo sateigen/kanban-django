@@ -21,7 +21,7 @@ class TicketSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ticket
-        fields = ('name', 'description', 'task_set')
+        fields = ('id', 'name', 'description', 'task_set')
 
 
 class BoardSerializer(serializers.ModelSerializer):
