@@ -3,6 +3,9 @@
   padding: 15px;
 }
 
+a {
+  color: #ccc;
+}
 section {
   width: 80%;
   height: 200px;
