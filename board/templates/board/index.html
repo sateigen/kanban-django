@@ -1,7 +1,16 @@
 {% extends 'board/base.html' %}
 
 {% block body %}
-{% for board in boards %}
-  <a href="{% url 'board_detail' board.id %}">{{ board.name }}</a>
-{% endfor %}
+
+<section>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-4" id=register>
+      <a href="{% url 'register' %}">New User</a>
+    </div>
+    <div class="col-md-1 col-md-offset-7" id=login>
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

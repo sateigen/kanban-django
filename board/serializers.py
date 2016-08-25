@@ -8,7 +8,6 @@ class StatusSerializer(serializers.ModelSerializer):
         fields = ('progress', 'task')
 
 
-
 class TaskSerializer(serializers.ModelSerializer):
 
     class Meta:
