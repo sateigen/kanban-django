@@ -1,3 +1,29 @@
+#logout {
+  float: right;
+  padding: 15px;
+}
+
+section {
+  width: 80%;
+  height: 200px;
+  margin: auto;
+  padding: 100px;
+  font-size: 16px;
+}
+
+
+div#register {
+  width: 15%;
+  height: 200px;
+  float: left;
+}
+
+div#login {
+  margin-left: 15%;
+  height: 200px;
+}
+
+
 .here_table {
   padding-left: 3%;
   width: 200px;
@@ -14,6 +40,7 @@
 .here_table  tr th {
   color: darkorange;
   text-align: center;
+  font-size: 18px;
 }
 
 .here_table tr {
@@ -22,6 +49,7 @@
   height: auto;
   text-align: center;
   vertical-align: middle;
+  font-size: 14px;
 }
 
 h2 {
