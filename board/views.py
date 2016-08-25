@@ -17,6 +17,14 @@ def index(request):
 @login_required
 def all_boards(request):
     user = request.user
+
+    if request.POST:
+        name = request.POST['name']
+        b = Board(name=name)
+        b.save()
+        b.user.add(user)
+        b.save()
+
     boards = Board.objects.filter(user=user)
     context = {
         'boards': boards
@@ -42,6 +50,11 @@ class TicketViewSet(viewsets.ModelViewSet):
 @login_required
 def board_detail(request, board_id):
     board = Board.objects.get(pk=board_id)
+    if request.POST:
+        name = request.POST['name']
+        description = request.POST['description']
+        t = Ticket(name=name, description=description, board=board)
+        t.save()
     context = {
         'board': board
     }

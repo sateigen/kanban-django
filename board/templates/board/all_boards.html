@@ -1,6 +1,11 @@
 {% extends 'board/base.html' %}
 
 {% block body %}
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="name" value="Name">
+  <button class="btn btn-default">Add Board</button>
+</form>
 {% for board in boards %}
   <a href="{% url 'board_detail' board.id %}">{{ board.name }}</a>
 {% endfor %}
