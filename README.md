@@ -9,3 +9,8 @@ A web-based application to keep track of your team's tasks. Each user may be ass
 
 ## How to Run
 * Visit https://kanban-tracker.herokuapp.com/
+
+## Contributors
+* Jon Alligood
+* Peter Lawless
+* Shannon Teigen
