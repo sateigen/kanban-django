@@ -10,14 +10,18 @@ from .serializers import BoardSerializer, TaskSerializer, TicketSerializer
 from rest_framework import viewsets
 
 
-@login_required
 def index(request):
+    return render(request, 'board/index.html')
+
+
+@login_required
+def all_boards(request):
     user = request.user
     boards = Board.objects.filter(user=user)
     context = {
         'boards': boards
     }
-    return render(request, 'board/index.html', context)
+    return render(request, 'board/all_boards.html', context)
 
 
 class BoardViewSet(viewsets.ModelViewSet):
@@ -44,6 +48,18 @@ def board_detail(request, board_id):
     return render(request, 'board/board.html', context)
 
 
+def signin(request):
+    if request.POST:
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect('/all_boards/')
+    else:
+        return render(request, 'registration/login.html')
+
+
 def signout(request):
     logout(request)
     return render(request, 'registration/logout.html')
@@ -54,7 +70,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect('/api/board/')
+            return HttpResponseRedirect('/all_boards/')
     else:
         form = UserCreationForm()
     context = {'form': form}

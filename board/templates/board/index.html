@@ -1,7 +1,8 @@
 {% extends 'board/base.html' %}
 
 {% block body %}
-{% for board in boards %}
-  <a href="{% url 'board_detail' board.id %}">{{ board.name }}</a>
-{% endfor %}
+
+  <a href="{% url 'register' %}">New User</a>
+  <a href="{% url 'login' %}">Login</a>
+
 {% endblock %}
